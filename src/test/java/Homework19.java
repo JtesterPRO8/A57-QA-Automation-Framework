@@ -12,16 +12,16 @@ public class Homework19 extends BaseTest{
         provideEmail("joseph.petersen@testpro.io");
         providePassword("QaOneTwo!!!");
         clickSubmitBtn();
-        Thread.sleep(2000);
+      //  Thread.sleep(2000);
         openPlaylist();
-        Thread.sleep(2000);
+     //   Thread.sleep(2000);
         clickDeletePlaylistBtn();
         //clickOkToDelete();
         Assert.assertEquals(getDeletePlaylistMsg(), expectedPlaylistDeleteMessage);
     }
 
     public void openPlaylist() {
-        WebElement playListElement = driver.findElement(By.xpath("//a[@href='#!/playlist/93988']"));
+        WebElement playListElement = driver.findElement(By.cssSelector(".playlist:nth-child(3)"));
         playListElement.click();
     }
 
