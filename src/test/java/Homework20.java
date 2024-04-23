@@ -1,6 +1,7 @@
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -35,7 +36,8 @@ public class Homework20 extends BaseTest{
 
     public String getDeletePlaylistMsg(){
         //WebElement notificationMsg = driver.findElement(By.cssSelector("div.success.show"));
-        WebElement notificationMsg = driver.findElement(By.cssSelector("div[class='success show']"));
+        //WebElement notificationMsg = driver.findElement(By.cssSelector("div[class='success show']"));
+        WebElement notificationMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div[class='success show']")));
         return notificationMsg.getText();
     }
 
