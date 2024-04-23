@@ -19,7 +19,7 @@ public class Homework20 extends BaseTest{
     }
 
     public void openPlaylist() {
-        WebElement playListElement = driver.findElement(By.xpath("//a[@href='#!/playlist/93991']"));
+        WebElement playListElement = driver.findElement(By.cssSelector(".playlist:nth-child(3)"));
         playListElement.click();
     }
 
